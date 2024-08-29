@@ -1,0 +1,41 @@
+{
+  "name": "vue-hijri-picker",
+  "version": "1.0.1",
+  "description": "A Vue 3 date picker component that supports both Hijri and Gregorian calendars",
+  "author": "Firas Kanaan <firaskanaan93@gmail.com>",
+  "license": "MIT",
+  "main": "dist/vue-hijri-picker.umd.js",
+  "module": "dist/vue-hijri-picker.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-hijri-picker.es.js",
+      "require": "./dist/vue-hijri-picker.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "moment": "^2.30.1",
+    "moment-hijri": "^2.30.0",
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.3.1"
+  }
+}
