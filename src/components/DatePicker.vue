@@ -17,13 +17,13 @@
         <div class="datepicker-container">
           <div class="calendar">
             <div class="calendar-header">
-              <button v-if="isYearSelection || isMonthSelection" @click="prevYearsOrMonths">«</button>
-              <button v-else @click="prevMonth">«</button>
+              <button class="datepicker-button" v-if="isYearSelection || isMonthSelection" @click="prevYearsOrMonths">«</button>
+              <button class="datepicker-button" v-else @click="prevMonth">«</button>
               <transition name="fade">
                 <span @click="toggleYearSelection">{{ currentMonth }} {{ currentYear }}</span>
               </transition>
-              <button v-if="isYearSelection || isMonthSelection" @click="nextYearsOrMonths">»</button>
-              <button v-else @click="nextMonth">»</button>
+              <button class="datepicker-button" v-if="isYearSelection || isMonthSelection" @click="nextYearsOrMonths">»</button>
+              <button class="datepicker-button" v-else @click="nextMonth">»</button>
             </div>
 
             <transition name="fade">
