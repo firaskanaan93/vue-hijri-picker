@@ -1,32 +1,27 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+// vite.config.js
+
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
+  plugins: [vue()],
   build: {
     lib: {
-      entry: fileURLToPath(new URL('./src/components/DatePicker.vue', import.meta.url)),
+      entry: path.resolve(__dirname, 'src/index.js'),
       name: 'VueHijriPicker',
-      fileName: (format) => `vue-hijri-picker.${format}.js`,
+      fileName: (format) => `vue-hijri-picker.${format}.js`
     },
     rollupOptions: {
-      external: ['vue', 'moment', 'moment-hijri', 'date-fns'],
+      // Externalize dependencies that shouldn’t be bundled
+      external: ['vue', 'moment-hijri', 'date-fns'],
       output: {
         globals: {
           vue: 'Vue',
-          moment: 'moment',
-          'moment-hijri': 'momentHijri',
-          'date-fns': 'dateFns',
-        },
-      },
-    },
-  },
-})
+          'moment-hijri': 'moment',
+          'date-fns': 'dateFns'
+        }
+      }
+    }
+  }
+});

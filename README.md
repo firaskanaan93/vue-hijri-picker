@@ -25,7 +25,6 @@ Here is a basic example of how to use the Vue Hijri Picker in your Vue 3 project
 
 ```vue
 <template>
-  <div id="app">
     <DatePicker 
       :initialType="calendarType" 
       :withTime="true" 
@@ -36,14 +35,13 @@ Here is a basic example of how to use the Vue Hijri Picker in your Vue 3 project
       <h3>Selected Date & Time:</h3>
       <p>{{ selectedDate }}</p>
     </div>
-  </div>
 </template>
 
 <script>
-import DatePicker from 'vue-hijri-picker';
+  import 'vue-hijri-picker/dist/style.css';
+  import DatePicker from 'vue-hijri-picker';
 
 export default {
-  name: 'App',
   components: {
     DatePicker,
   },
@@ -56,13 +54,6 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  margin-top: 40px;
-}
-</style>
 ```
 
 ## Props
